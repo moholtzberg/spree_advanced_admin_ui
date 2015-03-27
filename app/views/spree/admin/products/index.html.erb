@@ -66,9 +66,9 @@
 			<td><%= pluralize(product.variant_documents.count, "Doc") %></td>
 			<td><%= link_to product.try(:name), edit_admin_product_path(product) %><br/><%= product.slug %></td>
 			<td class="text-center"><%= "<span class='icon icon-ok'></span>".html_safe unless product.available_on > Time.now %></td>
+			<td class="text-center info"><%= number_to_currency(product.master.cost_price, :unit => "$") %></td>
 			<td class="text-center info"><%= product.display_price.to_html rescue '' %></td>
 			<td class="text-center info"><%= number_to_currency(product.master.msrp, :unit => "$") %></td>
-			<td class="text-center info"><%= number_to_currency(product.master.cost_price, :unit => "$") %></td>
 			<td class="text-center success"><%= product.height %></td>
 			<td class="text-center success"><%= product.width %></td>
 			<td class="text-center success"><%= product.depth %></td>
